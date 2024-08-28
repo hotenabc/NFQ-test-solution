@@ -136,7 +136,6 @@ composer check-cs
 
 This command shows two errors, which can be easily fixed using the CS Fixer.
 
-![Image](images/img1.png)
 
 Next, we run static analysis with:
 
@@ -146,7 +145,6 @@ composer phpstan
 
 This command identifies one error, which can also be quickly resolved.
 
-![Image](images/img2.png)
 
 After fixing all the errors, we can proceed to check the tests.
 
