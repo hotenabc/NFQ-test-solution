@@ -4,8 +4,6 @@
 
 In this repository, we'll dive into the old yet intriguing refactoring kata, **"Product,"** and explore how to improve it in PHP.
 
-You can find the kata's repository [here](https://github.com/hotenabc/Product-Refactoring-Kata).
-
 ### The original code for the kata:
 
 ```php
