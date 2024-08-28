@@ -1,5 +1,5 @@
 {
-    "name": "emilybache/gilded-rose-refactoring-kata",
+    "name": "emilybache/product-refactoring-kata",
     "description": "A kata to practice refactoring, tests and polymorphism",
     "license": "MIT",
     "require": {
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "GildedRose\\": "src/"
+            "Product\\": "src/"
         }
     },
     "autoload-dev": {
