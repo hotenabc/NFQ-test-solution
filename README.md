@@ -1,10 +1,10 @@
-# GildedRose Refactoring Kata - PHP Version - Solution
+# Product Refactoring Kata - PHP Version - Solution
 
 ## The Kata
 
-In this repository, we'll dive into the old yet intriguing refactoring kata, **"Gilded Rose,"** and explore how to improve it in PHP.
+In this repository, we'll dive into the old yet intriguing refactoring kata, **"Product,"** and explore how to improve it in PHP.
 
-You can find the kata's repository [here](https://github.com/emilybache/GildedRose-Refactoring-Kata).
+You can find the kata's repository [here](https://github.com/hotenabc/Product-Refactoring-Kata).
 
 ### The original code for the kata:
 
@@ -13,7 +13,7 @@ You can find the kata's repository [here](https://github.com/emilybache/GildedRo
 
 declare(strict_types=1);
 
-namespace GildedRose;
+namespace Product;
 
 class Item implements \Stringable
 {
@@ -36,9 +36,9 @@ class Item implements \Stringable
 
 declare(strict_types=1);
 
-namespace GildedRose;
+namespace Product;
 
-final class GildedRose
+final class Product
 {
     /**
      * @param Item[] $items
@@ -175,7 +175,7 @@ When you run the tests for the first time, the library generates new files in th
 
 You need to manually verify the output in the `*.received.txt` file. If the output is correct, simply copy its content into the `*.approved.txt` file. From then on, whenever you run the tests, the library compares the generated output with the content of the `*.approved.txt` file. If they match, the test passes; if not, it indicates a problem.
 
-### Regarding GildedRoseTest.php
+### Regarding ProductTest.php
 
 It seems incomplete, which is why there's a string named `"fixme"`. You can change this to `"foo"` to make the test work, though it's a very simple and outdated test.
 
@@ -196,7 +196,7 @@ Here is the `Item` class we start with:
 
 declare(strict_types=1);
 
-namespace GildedRose;
+namespace Product;
 
 class Item implements \Stringable
 {
@@ -216,9 +216,9 @@ class Item implements \Stringable
 
 Since we shouldn't modify this class according to the kata's instructions, we'll leave it as is. Although adding setters could be beneficial for better encapsulation, it's not necessary for this task.
 
-### The GildedRose Class
+### The Product Class
 
-To apply the Strategy Pattern, we'll refactor the `GildedRose` class to use strategies for updating items.
+To apply the Strategy Pattern, we'll refactor the `Product` class to use strategies for updating items.
 
 ### Strategy Interface
 
@@ -231,9 +231,9 @@ For the interface name, `UpdateStrategy` fits the logic we have. In PHP, it's co
 
 declare(strict_types=1);
 
-namespace GildedRose\UpdateStrategy;
+namespace Product\UpdateStrategy;
 
-use GildedRose\Item;
+use Product\Item;
 
 interface UpdateStrategyInterface
 {
@@ -258,9 +258,9 @@ Let's implement the `AgedBrieUpdateStrategy` based on the given requirements and
 
 declare(strict_types=1);
 
-namespace GildedRose\UpdateStrategy;
+namespace Product\UpdateStrategy;
 
-use GildedRose\Item;
+use Product\Item;
 
 class AgedBrieUpdateStrategy implements UpdateStrategyInterface
 {
@@ -293,9 +293,9 @@ Let's implement the `BackstagePassUpdateStrategy` based on the provided requirem
 
 declare(strict_types=1);
 
-namespace GildedRose\UpdateStrategy;
+namespace Product\UpdateStrategy;
 
-use GildedRose\Item;
+use Product\Item;
 
 class BackstagePassUpdateStrategy implements UpdateStrategyInterface
 {
@@ -339,9 +339,9 @@ Given these rules, the `SulfurasUpdateStrategy` can be implemented very simply s
 
 declare(strict_types=1);
 
-namespace GildedRose\UpdateStrategy;
+namespace Product\UpdateStrategy;
 
-use GildedRose\Item;
+use Product\Item;
 
 class SulfurasUpdateStrategy implements UpdateStrategyInterface
 {
@@ -367,9 +367,9 @@ Lastly, we have to implement a `DefaultUpdateStrategy` for items like "+5 Dexter
 
 declare(strict_types=1);
 
-namespace GildedRose\UpdateStrategy;
+namespace Product\UpdateStrategy;
 
-use GildedRose\Item;
+use Product\Item;
 
 class DefaultUpdateStrategy implements UpdateStrategyInterface
 {
@@ -396,21 +396,21 @@ class DefaultUpdateStrategy implements UpdateStrategyInterface
 
 ### Usage of the Update Strategies
 
-With these strategies implemented, we can now refactor the `GildedRose` class:
+With these strategies implemented, we can now refactor the `Product` class:
 
 ```php
 <?php
 
 declare(strict_types=1);
 
-namespace GildedRose;
+namespace Product;
 
-use GildedRose\UpdateStrategy\AgedBrieUpdateStrategy;
-use GildedRose\UpdateStrategy\BackstagePassUpdateStrategy;
-use GildedRose\UpdateStrategy\DefaultUpdateStrategy;
-use GildedRose\UpdateStrategy\SulfurasUpdateStrategy;
+use Product\UpdateStrategy\AgedBrieUpdateStrategy;
+use Product\UpdateStrategy\BackstagePassUpdateStrategy;
+use Product\UpdateStrategy\DefaultUpdateStrategy;
+use Product\UpdateStrategy\SulfurasUpdateStrategy;
 
-class GildedRose
+class Product
 {
     private array $strategies;
 
@@ -488,7 +488,7 @@ Strategies ensure that each item's update logic is managed independently. This i
 Customizing the behavior of item updates required significant modifications to the core logic.
 
 **Refactored Code:**  
-The `GildedRose` class allows for custom strategies to be injected, providing flexibility for custom behavior while falling back on default strategies for unspecified items. This makes it easy to adapt or extend behavior as needed.
+The `Product` class allows for custom strategies to be injected, providing flexibility for custom behavior while falling back on default strategies for unspecified items. This makes it easy to adapt or extend behavior as needed.
 
 
 Running the tests again shows that the expected output remains unchanged.
@@ -511,9 +511,9 @@ Here's the new strategy for handling "Conjured" items:
 
 declare(strict_types=1);
 
-namespace GildedRose\UpdateStrategy;
+namespace Product\UpdateStrategy;
 
-use GildedRose\Item;
+use Product\Item;
 
 class ConjuredUpdateStrategy implements UpdateStrategyInterface
 {
@@ -596,11 +596,11 @@ The refactored code improves maintainability, readability, and flexibility by us
 
 ## Bonus
 
-Now that we've completed the main refactoring, we can further improve the code by extracting the strategy management from the GildedRose class. This will enhance future maintainability and better separate concerns.
+Now that we've completed the main refactoring, we can further improve the code by extracting the strategy management from the Product class. This will enhance future maintainability and better separate concerns.
 
 ### Context Class
 
-In the Strategy Pattern, the Context Class is responsible for holding a reference to a strategy object and delegating the execution of the algorithm to that strategy. Currently, the caller (GildedRose) is acting as the context class. To make the code more modular, we'll create a separate class for this role.
+In the Strategy Pattern, the Context Class is responsible for holding a reference to a strategy object and delegating the execution of the algorithm to that strategy. Currently, the caller (Product) is acting as the context class. To make the code more modular, we'll create a separate class for this role.
 
 We should choose a name that reflects the action being performed. For example, `ItemUpdater` or `ItemUpdaterService` would work well. We'll use `ItemUpdater`:
 
@@ -609,14 +609,14 @@ We should choose a name that reflects the action being performed. For example, `
 
 declare(strict_types=1);
 
-namespace GildedRose\Service;
+namespace Product\Service;
 
-use GildedRose\Item;
-use GildedRose\UpdateStrategy\AgedBrieUpdateStrategy;
-use GildedRose\UpdateStrategy\BackstagePassUpdateStrategy;
-use GildedRose\UpdateStrategy\ConjuredUpdateStrategy;
-use GildedRose\UpdateStrategy\DefaultUpdateStrategy;
-use GildedRose\UpdateStrategy\SulfurasUpdateStrategy;
+use Product\Item;
+use Product\UpdateStrategy\AgedBrieUpdateStrategy;
+use Product\UpdateStrategy\BackstagePassUpdateStrategy;
+use Product\UpdateStrategy\ConjuredUpdateStrategy;
+use Product\UpdateStrategy\DefaultUpdateStrategy;
+use Product\UpdateStrategy\SulfurasUpdateStrategy;
 
 class ItemUpdater
 {
@@ -643,20 +643,20 @@ class ItemUpdater
 }
 ```
 
-Now that we have a dedicated `ItemUpdater` class, we have different options for integrating it with `GildedRose`. The best approach would be to inject an already initialized `ItemUpdater` object into the `GildedRose` constructor. This would decouple the classes, allowing `GildedRose` to focus only on its core functionality without worrying about how items are updated. However, this would require changes to unit tests and could alter the class's external behavior.
+Now that we have a dedicated `ItemUpdater` class, we have different options for integrating it with `Product`. The best approach would be to inject an already initialized `ItemUpdater` object into the `Product` constructor. This would decouple the classes, allowing `Product` to focus only on its core functionality without worrying about how items are updated. However, this would require changes to unit tests and could alter the class's external behavior.
 
-To avoid changing the external behavior for now, we'll initialize the `ItemUpdater` directly within the `GildedRose` constructor. While this isn't the ideal solution due to the resulting tight coupling, it keeps the current behavior intact.
+To avoid changing the external behavior for now, we'll initialize the `ItemUpdater` directly within the `Product` constructor. While this isn't the ideal solution due to the resulting tight coupling, it keeps the current behavior intact.
 
 ```php
 <?php
 
 declare(strict_types=1);
 
-namespace GildedRose;
+namespace Product;
 
-use GildedRose\Service\ItemUpdater;
+use Product\Service\ItemUpdater;
 
-class GildedRose
+class Product
 {
     private ItemUpdater $itemUpdater;
 
@@ -676,6 +676,6 @@ class GildedRose
 }
 ```
 
-As we can see, the `GildedRose` class is now cleaner and more maintainable. By extracting the strategy logic into the `ItemUpdater` class, we only need to modify the context class when adding new update strategies, leaving `GildedRose` untouched. This refactoring has made the code more modular and easier to extend in the future. Well done!
+As we can see, the `Product` class is now cleaner and more maintainable. By extracting the strategy logic into the `ItemUpdater` class, we only need to modify the context class when adding new update strategies, leaving `Product` untouched. This refactoring has made the code more modular and easier to extend in the future. Well done!
 
 Happy coding!
