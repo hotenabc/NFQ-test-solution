@@ -89,7 +89,7 @@ The main observation is that the `Item` class encapsulates properties that chang
 
 ## Choosing the Right Tools
 
-As developers, we use code constructs like tools to solve problems, similar to how craftsmen use hammers and screwdrivers. Fortunately, experienced developers have established various design patterns over the years. One suitable pattern for this kata is the Strategy Pattern, which helps address two main concerns:
+As developers, we use code constructs like tools to solve problems, similar to how craftsmen use hammers and screwdrivers. Fortunately, experienced developers have established various design patterns over the years. One suitable pattern for this NFQ-test is the Strategy Pattern, which helps address two main concerns:
 - **Adding or Removing Units:** We can add or remove items without altering the global logic.
 - **Encapsulating Item-Specific Logic:** Each item's update logic is contained within its own class.
 
