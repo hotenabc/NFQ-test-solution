@@ -3,7 +3,7 @@
 ### The original code for the NFQ-test:
 
 ```php
-```php
+
 <?php
 
 declare(strict_types=1);
