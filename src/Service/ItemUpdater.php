@@ -21,7 +21,7 @@ class ItemUpdater
             'Aged Brie' => new AgedBrieUpdateStrategy(),
             'Backstage passes' => new BackstagePassUpdateStrategy(),
             'Sulfuras' => new SulfurasUpdateStrategy(),
-            'Conjured Mana Cake' => new ConjuredUpdateStrategy(),
+            'Conjured' => new ConjuredUpdateStrategy(),
             'default' => new DefaultUpdateStrategy(),
         ];
 
