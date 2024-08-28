@@ -1,4 +1,4 @@
-# Product Refactoring - PHP Version - Solution
+# NFQ-test Product Refactoring - Solution
 
 ## The NFQ-test
 
