@@ -19,8 +19,8 @@ class ItemUpdater
     {
         $defaultStrategies = [
             'Aged Brie' => new AgedBrieUpdateStrategy(),
-            'Backstage passes to a TAFKAL80ETC concert' => new BackstagePassUpdateStrategy(),
-            'Sulfuras, Hand of Ragnaros' => new SulfurasUpdateStrategy(),
+            'Backstage passes' => new BackstagePassUpdateStrategy(),
+            'Sulfuras' => new SulfurasUpdateStrategy(),
             'Conjured Mana Cake' => new ConjuredUpdateStrategy(),
             'default' => new DefaultUpdateStrategy(),
         ];
