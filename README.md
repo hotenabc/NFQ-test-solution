@@ -674,6 +674,4 @@ class Product
 }
 ```
 
-As we can see, the `Product` class is now cleaner and more maintainable. By extracting the strategy logic into the `ItemUpdater` class, we only need to modify the context class when adding new update strategies, leaving `Product` untouched. This refactoring has made the code more modular and easier to extend in the future. Well done!
-
-Happy coding!
+As we can see, the `Product` class is now cleaner and more maintainable. By extracting the strategy logic into the `ItemUpdater` class, we only need to modify the context class when adding new update strategies, leaving `Product` untouched. This refactoring has made the code more modular and easier to extend in the future.
