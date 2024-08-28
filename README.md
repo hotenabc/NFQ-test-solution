@@ -515,7 +515,7 @@ $defaultStrategies = [
     'Aged Brie' => new AgedBrieUpdateStrategy(),
     'Backstage passes' => new BackstagePassUpdateStrategy(),
     'Sulfuras' => new SulfurasUpdateStrategy(),
-    'Conjured Mana Cake' => new ConjuredUpdateStrategy(),
+    'Conjured' => new ConjuredUpdateStrategy(),
     'default' => new DefaultUpdateStrategy(),
 ];
 ```
@@ -537,7 +537,7 @@ $items = [
     new Item('Backstage passes', 10, 49),
     new Item('Backstage passes', 5, 49),
     // this conjured item does not work properly yet
-    new Item('Conjured Mana Cake', 3, 6),
+    new Item('Conjured', 3, 6),
 ];
 ```
 
@@ -591,7 +591,7 @@ class ItemUpdater
             'Aged Brie' => new AgedBrieUpdateStrategy(),
             'Backstage passes' => new BackstagePassUpdateStrategy(),
             'Sulfuras' => new SulfurasUpdateStrategy(),
-            'Conjured Mana Cake' => new ConjuredUpdateStrategy(),
+            'Conjured' => new ConjuredUpdateStrategy(),
             'default' => new DefaultUpdateStrategy(),
         ];
 
