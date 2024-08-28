@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use GildedRose\GildedRose;
-use GildedRose\Item;
+use Product\Product;
+use Product\Item;
 
-echo 'OMGHAI!' . PHP_EOL;
+echo 'NFQ-GREAT!' . PHP_EOL;
 
 $items = [
     new Item('+5 Dexterity Vest', 10, 20),
@@ -22,7 +22,7 @@ $items = [
     new Item('Conjured Mana Cake', 3, 6),
 ];
 
-$app = new GildedRose($items);
+$app = new Product($items);
 
 $days = 2;
 if ((is_countable($argv) ? count($argv) : 0) > 1) {
