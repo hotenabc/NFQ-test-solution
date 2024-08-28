@@ -443,7 +443,7 @@ Let's compare the old and the new code:
 ### 1. Separation of Concerns:
 
 **Old Code:**  
-The `updateQuality` method in the `GildedRose` class contained complex logic with numerous if-else statements to handle different types of items. This made the method hard to read, maintain, and extend.
+The `updateQuality` method in the `Product` class contained complex logic with numerous if-else statements to handle different types of items. This made the method hard to read, maintain, and extend.
 
 **Refactored Code:**  
 The logic for updating items is separated into individual strategy classes (`AgedBrieUpdateStrategy`, `BackstagePassUpdateStrategy`, `SulfurasUpdateStrategy`, and `DefaultUpdateStrategy`). Each class encapsulates the update behavior for a specific type of item, following the Single Responsibility Principle. This makes the code easier to understand and modify.
