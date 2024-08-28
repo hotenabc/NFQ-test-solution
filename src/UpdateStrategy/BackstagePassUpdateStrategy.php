@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GildedRose\UpdateStrategy;
+namespace Product\UpdateStrategy;
 
-use GildedRose\Item;
+use Product\Item;
 
 class BackstagePassUpdateStrategy implements UpdateStrategyInterface
 {
