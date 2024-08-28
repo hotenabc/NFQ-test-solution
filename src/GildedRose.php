@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace GildedRose;
+namespace Product;
 
-use GildedRose\Service\ItemUpdater;
+use Product\Service\ItemUpdater;
 
-class GildedRose
+class Product
 {
     private ItemUpdater $itemUpdater;
 
