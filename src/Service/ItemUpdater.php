@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace GildedRose\Service;
+namespace Product\Service;
 
-use GildedRose\Item;
-use GildedRose\UpdateStrategy\AgedBrieUpdateStrategy;
-use GildedRose\UpdateStrategy\BackstagePassUpdateStrategy;
-use GildedRose\UpdateStrategy\ConjuredUpdateStrategy;
-use GildedRose\UpdateStrategy\DefaultUpdateStrategy;
-use GildedRose\UpdateStrategy\SulfurasUpdateStrategy;
+use Product\Item;
+use Product\UpdateStrategy\AgedBrieUpdateStrategy;
+use Product\UpdateStrategy\BackstagePassUpdateStrategy;
+use Product\UpdateStrategy\ConjuredUpdateStrategy;
+use Product\UpdateStrategy\DefaultUpdateStrategy;
+use Product\UpdateStrategy\SulfurasUpdateStrategy;
 
 class ItemUpdater
 {
