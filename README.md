@@ -1,9 +1,5 @@
 # NFQ-test Product Refactoring - Solution
 
-## The NFQ-test
-
-In this repository, we'll dive into the old yet intriguing refactoring NFQ-test, **"Product,"** and explore how to improve it in PHP.
-
 ### The original code for the NFQ-test:
 
 ```php
