@@ -454,12 +454,12 @@ The logic for updating items is separated into individual strategy classes (`Age
 Adding new item types or modifying the behavior for existing ones required modifying the `updateQuality` method, which risked introducing bugs and made the code less flexible.
 
 **Refactored Code:**  
-New item types or special behaviors can be accommodated by creating new strategy classes without changing the existing ones. The `GildedRose` class simply needs to be provided with the appropriate strategy for each item type. This makes the system more flexible and extensible.
+New item types or special behaviors can be accommodated by creating new strategy classes without changing the existing ones. The `Product` class simply needs to be provided with the appropriate strategy for each item type. This makes the system more flexible and extensible.
 
 ### 3. Maintainability:
 
 **Old Code:**  
-The single method in `GildedRose` was lengthy and difficult to maintain. Every change to item behavior required digging through complex conditional logic.
+The single method in `Product` was lengthy and difficult to maintain. Every change to item behavior required digging through complex conditional logic.
 
 **Refactored Code:**  
 With strategies encapsulating the behavior for different item types, each strategy class is small, focused, and easier to test independently. Changes to item behavior are localized to specific strategy classes, reducing the risk of unintended side effects.
