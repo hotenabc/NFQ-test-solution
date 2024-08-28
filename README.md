@@ -1,10 +1,10 @@
-# Product Refactoring Kata - PHP Version - Solution
+# Product Refactoring - PHP Version - Solution
 
-## The Kata
+## The NFQ-test
 
-In this repository, we'll dive into the old yet intriguing refactoring kata, **"Product,"** and explore how to improve it in PHP.
+In this repository, we'll dive into the old yet intriguing refactoring NFQ-test, **"Product,"** and explore how to improve it in PHP.
 
-### The original code for the kata:
+### The original code for the NFQ-test:
 
 ```php
 <?php
