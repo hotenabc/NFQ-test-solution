@@ -1,7 +1,4 @@
-# GildedRose Kata - PHP Version
-
-See the [top level readme](../README.md) for general information about this exercise. This is the PHP version of the
-GildedRose Kata.
+# Product
 
 ## Installation
 
