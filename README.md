@@ -15,19 +15,19 @@ See [GitHub cloning a repository](https://help.github.com/en/articles/cloning-a-
 create a local copy of this project on your computer.
 
 ```sh
-git clone git@github.com:emilybache/GildedRose-Refactoring-Kata.git
+git clone git@github.com:hotenabc/NFQ-test-solution.git
 ```
 
 or
 
 ```shell script
-git clone https://github.com/emilybache/GildedRose-Refactoring-Kata.git
+git clone https://github.com/hotenabc/NFQ-test-solution.git
 ```
 
 Install all the dependencies using composer
 
 ```shell script
-cd ./GildedRose-Refactoring-Kata/php
+cd ./NFQ-test-solution
 composer install
 ```
 
@@ -44,12 +44,10 @@ The project uses composer to install:
 
 - `src` - contains the two classes:
     - `Item.php` - this class should not be changed
-    - `GildedRose.php` - this class needs to be refactored, and the new feature added
+    - `Product.php` - this class needs to be refactored, and the new feature added
 - `tests` - contains the tests
-    - `GildedRoseTest.php` - starter test.
-        - Tip: ApprovalTests has been included as a dev dependency, see the PHP version of
-          the [Theatrical Players Refactoring Kata](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata/)
-          for an example
+    - `ProductTest.php` - starter test.
+        - Tip: ApprovalTests has been included as a dev dependency
 - `Fixture`
     - `texttest_fixture.php` this could be used by an ApprovalTests, or run from the command line
 
@@ -58,10 +56,10 @@ The project uses composer to install:
 To run the fixture from the php directory:
 
 ```shell
-php .\fixtures\texttest_fixture.php 10
+php .\fixtures\texttest_fixture.php 30
 ```
 
-Change **10** to the required days.
+Change **30** to the required days.
 
 ## Testing
 
@@ -70,13 +68,6 @@ project run:
 
 ```shell script
 composer tests
-```
-
-A Windows a batch file has been created, like an alias on Linux/Mac (e.g. `alias pu="composer tests"`), the same
-PHPUnit `composer tests` can be run:
-
-```shell script
-pu.bat
 ```
 
 ### Tests with Coverage Report
@@ -105,26 +96,12 @@ To check code, but not fix errors:
 composer check-cs
 ``` 
 
-On Windows a batch file has been created, like an alias on Linux/Mac (e.g. `alias cc="composer check-cs"`), the same
-PHPUnit `composer check-cs` can be run:
-
-```shell script
-cc.bat
-```
-
 ### Fix Code
 
 ECS provides may code fixes, automatically, if advised to run --fix, the following script can be run:
 
 ```shell script
 composer fix-cs
-```
-
-On Windows a batch file has been created, like an alias on Linux/Mac (e.g. `alias fc="composer fix-cs"`), the same
-PHPUnit `composer fix-cs` can be run:
-
-```shell script
-fc.bat
 ```
 
 ## Static Analysis
@@ -135,11 +112,4 @@ PHPStan is used to run static analysis checks:
 composer phpstan
 ```
 
-On Windows a batch file has been created, like an alias on Linux/Mac (e.g. `alias ps="composer phpstan"`), the same
-PHPUnit `composer phpstan` can be run:
-
-```shell script
-ps.bat
-```
-
-**Happy coding**!
+**Great**!
